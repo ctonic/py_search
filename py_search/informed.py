@@ -16,7 +16,7 @@ from py_search.uninformed import choose_search
 
 
 def best_first_search(problem, cost_limit=float('inf'), graph=True,
-                      forward=True, backward=False):
+                      forward=True, backward=False, depth_limit=float('inf')):
     """
     Cost limited best-first search. By default the cost limit is set to
     `float('inf')`, so it is identical to traditional best-first search. This
@@ -38,7 +38,8 @@ def best_first_search(problem, cost_limit=float('inf'), graph=True,
                                           node_value=problem.node_value,
                                           cost_limit=cost_limit),
                                   graph=graph, forward=forward,
-                                  backward=backward):
+                                  backward=backward,
+                                  depth_limit=depth_limit):
         yield solution
 
 
